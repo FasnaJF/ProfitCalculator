@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "139ba9736d08cf490c94",
+    "revision": "25c6bf934645e0f7d01c",
     "url": "/ProfitCalculator/static/css/main.a2c1d58e.chunk.css"
   },
   {
-    "revision": "139ba9736d08cf490c94",
-    "url": "/ProfitCalculator/static/js/main.139ba973.chunk.js"
+    "revision": "25c6bf934645e0f7d01c",
+    "url": "/ProfitCalculator/static/js/main.25c6bf93.chunk.js"
   },
   {
     "revision": "cc360fb6938c4a946641",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/ProfitCalculator/static/js/runtime~main.68e02243.js"
   },
   {
-    "revision": "3113a77f011e11b0c3d4e0ccd38c59c3",
+    "revision": "405cabb0b58ed870357172df2057f955",
     "url": "/ProfitCalculator/index.html"
   }
 ];

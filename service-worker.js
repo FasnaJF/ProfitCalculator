@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ProfitCalculator/precache-manifest.52ddc32822da43b3922dee486c2058c7.js"
+  "/ProfitCalculator/precache-manifest.64eead4a17295d69a92bd6de373008fb.js"
 );
 
 workbox.clientsClaim();

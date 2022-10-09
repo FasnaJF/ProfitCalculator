@@ -1,7 +1,7 @@
 {
   "main.css": "/ProfitCalculator/static/css/main.a2c1d58e.chunk.css",
-  "main.js": "/ProfitCalculator/static/js/main.139ba973.chunk.js",
-  "main.js.map": "/ProfitCalculator/static/js/main.139ba973.chunk.js.map",
+  "main.js": "/ProfitCalculator/static/js/main.25c6bf93.chunk.js",
+  "main.js.map": "/ProfitCalculator/static/js/main.25c6bf93.chunk.js.map",
   "static/js/1.cc360fb6.chunk.js": "/ProfitCalculator/static/js/1.cc360fb6.chunk.js",
   "static/js/1.cc360fb6.chunk.js.map": "/ProfitCalculator/static/js/1.cc360fb6.chunk.js.map",
   "static/js/2.946d8365.chunk.js": "/ProfitCalculator/static/js/2.946d8365.chunk.js",
@@ -10,6 +10,6 @@
   "runtime~main.js.map": "/ProfitCalculator/static/js/runtime~main.68e02243.js.map",
   "static/css/main.a2c1d58e.chunk.css.map": "/ProfitCalculator/static/css/main.a2c1d58e.chunk.css.map",
   "index.html": "/ProfitCalculator/index.html",
-  "precache-manifest.52ddc32822da43b3922dee486c2058c7.js": "/ProfitCalculator/precache-manifest.52ddc32822da43b3922dee486c2058c7.js",
+  "precache-manifest.64eead4a17295d69a92bd6de373008fb.js": "/ProfitCalculator/precache-manifest.64eead4a17295d69a92bd6de373008fb.js",
   "service-worker.js": "/ProfitCalculator/service-worker.js"
 }
