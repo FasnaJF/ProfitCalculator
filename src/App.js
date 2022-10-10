@@ -24,38 +24,73 @@ function App() {
     const [earn, setEarn] = useState('');
     const [coins, setCoins] = useState('');
 
-    function handleChange1(evt) {
-        setAmount1(evt.target.value);
-        setCoin1(parseFloat(evt.target.value / rate1).toFixed(2));
-    }
 
-    function handleChange2(evt) {
-        setAmount2(evt.target.value);
-        setCoin2(parseFloat(evt.target.value / rate2).toFixed(2));
-    }
+    function handleChange(e){
+        let name = e.target.name.replace(/[0-9]/g, '');
+        let number = e.target.name.replace(/^\D+/g, '');
 
-    function handleChange3(evt) {
-        setAmount3(evt.target.value);
-        setCoin3(parseFloat(evt.target.value / rate3).toFixed(2));
-    }
+        if(name === 'rate'){
+            switch(number) {
+                case '1':
+                    setRate1(e.target.value);
+                    setCoin1(parseFloat( amount1/ e.target.value).toFixed(2));
+                    break;
+                case '2':
+                    setRate2(e.target.value);
+                    setCoin2(parseFloat( amount2/ e.target.value).toFixed(2));                    break;
+                case '3':
+                    setRate3(e.target.value);
+                    setCoin3(parseFloat( amount3/ e.target.value).toFixed(2));
+                    break;
+                case '4':
+                    setRate4(e.target.value);
+                    setCoin4(parseFloat( amount4/ e.target.value).toFixed(2));
+                    break;
+                case '5':
+                    setRate5(e.target.value);
+                    setCoin5(parseFloat( amount5/ e.target.value).toFixed(2));
+                    break;
+                default:
+                // code block
+            }
+        }
 
-    function handleChange4(evt) {
-        setAmount4(evt.target.value);
-        setCoin4(parseFloat(evt.target.value / rate4).toFixed(2));
-    }
+        if(name === 'amount'){
+            switch(number) {
+                case '1':
+                    setAmount1(e.target.value);
+                    setCoin1(parseFloat(e.target.value / rate1).toFixed(2));
+                    break;
+                case '2':
+                    setAmount2(e.target.value);
+                    setCoin2(parseFloat(e.target.value / rate2).toFixed(2));
+                    break;
+                case '3':
+                    setAmount3(e.target.value);
+                    setCoin3(parseFloat(e.target.value / rate3).toFixed(2));
+                    break;
+                case '4':
+                    setAmount4(e.target.value);
+                    setCoin4(parseFloat(e.target.value / rate4).toFixed(2));
+                    break;
+                case '5':
+                    setAmount5(e.target.value);
+                    setCoin5(parseFloat( e.target.value/ rate5).toFixed(2));
+                    break;
+                default:
+                // code block
+            }
+        }
 
-    function handleChange5(evt) {
-        setAmount5(evt.target.value);
-        setCoin5(parseFloat(evt.target.value / rate5).toFixed(2));
+
     }
 
     const calcSum = (event) => {
         event.preventDefault()
-        console.log(event);
 
-        rate1 = rate1 ? parseFloat(rate1) : 0;
+        rate1 = rate1 ? parseFloat(rate1) : 1;
         amount1 = amount1 ? parseFloat(amount1) : 0;
-        rate2 = rate2 ? parseFloat(rate2) : 0;
+        rate2 = rate2 ? parseFloat(rate2) : 1;
         amount2 = amount2 ? parseFloat(amount2) : 0;
         rate3 = rate3 ? parseFloat(rate3) : 1;
         amount3 = amount3 ? parseFloat(amount3) : 0;
@@ -84,81 +119,81 @@ function App() {
                     <div className='rowC'>
                         <div className='rateCol'>
                             <label>Rate - 1st round</label>
-                            <input type="text" placeholder='Enter Rate' value={rate1}
-                                   onChange={(e) => setRate1(e.target.value)}/>
+                            <input type="text" placeholder='Enter Rate' name='rate1' value={rate1}
+                                   onChange={handleChange}/>
                         </div>
                         <div className='rateCol'>
                             <label>Price</label>
                             <input type="text" placeholder='Enter Price' name='amount1' value={amount1}
-                                   onChange={handleChange1}/>
+                                   onChange={handleChange}/>
                         </div>
                         <div>
                             <label>Coins</label>
-                            <input type="text" readOnly placeholder='No of Coins' value={coin1}/>
+                            <input type="text" readOnly placeholder='No of Coins' name='coin1' value={coin1}/>
                         </div>
                     </div>
                     <div className='rowC'>
                         <div className='rateCol'>
                             <label>Rate - 2nd round</label>
-                            <input type="text" placeholder='Enter Rate' value={rate2}
-                                   onChange={(e) => setRate2(e.target.value)}/>
+                            <input type="text" placeholder='Enter Rate' name='rate2' value={rate2}
+                                   onChange={handleChange}/>
                         </div>
                         <div className='rateCol'>
                             <label>Price</label>
-                            <input type="text" placeholder='Enter Price' value={amount2}
-                                   onChange={handleChange2}/>
+                            <input type="text" placeholder='Enter Price' name='amount2' value={amount2}
+                                   onChange={handleChange}/>
                         </div>
                         <div>
                             <label>Coins</label>
-                            <input type="text" readOnly placeholder='No of Coins' value={coin2}/>
+                            <input type="text" readOnly placeholder='No of Coins' name='coin2' value={coin2}/>
                         </div>
                     </div>
                     <div className='rowC'>
                         <div className='rateCol'>
                             <label>Rate - 3rd round</label>
-                            <input type="text" placeholder='Enter Rate' value={rate3}
-                                   onChange={(e) => setRate3(e.target.value)}/>
+                            <input type="text" placeholder='Enter Rate' name='rate3' value={rate3}
+                                   onChange={handleChange}/>
                         </div>
                         <div className='rateCol'>
                             <label>Price</label>
-                            <input type="text" placeholder='Enter Price' value={amount3}
-                                   onChange={handleChange3}/>
+                            <input type="text" placeholder='Enter Price' name='amount3' value={amount3}
+                                   onChange={handleChange}/>
                         </div>
                         <div>
                             <label>Coins</label>
-                            <input type="text" readOnly placeholder='No of Coins' value={coin3}/>
+                            <input type="text" readOnly placeholder='No of Coins' name='coin3' value={coin3}/>
                         </div>
                     </div>
                     <div className='rowC'>
                         <div className='rateCol'>
                             <label>Rate - 4th round</label>
-                            <input type="text" placeholder='Enter Rate' value={rate4}
-                                   onChange={(e) => setRate4(e.target.value)}/>
+                            <input type="text" placeholder='Enter Rate' name='rate4' value={rate4}
+                                   onChange={handleChange}/>
                         </div>
                         <div className='rateCol'>
                             <label>Price</label>
-                            <input type="text" placeholder='Enter Price' value={amount4}
-                                   onChange={handleChange4}/>
+                            <input type="text" placeholder='Enter Price' name='amount4' value={amount4}
+                                   onChange={handleChange}/>
                         </div>
                         <div>
                             <label>Coins</label>
-                            <input type="text" readOnly placeholder='No of Coins' value={coin4}/>
+                            <input type="text" readOnly placeholder='No of Coins' name='coin4' value={coin4}/>
                         </div>
                     </div>
                     <div className='rowC'>
                         <div className='rateCol'>
                             <label>Rate - 5th round</label>
-                            <input type="text" placeholder='Enter Rate' value={rate5}
-                                   onChange={(e) => setRate5(e.target.value)}/>
+                            <input type="text" placeholder='Enter Rate' name='rate5' value={rate5}
+                                   onChange={handleChange}/>
                         </div>
                         <div className='rateCol'>
                             <label>Price</label>
-                            <input type="text" placeholder='Enter Price' value={amount5}
-                                   onChange={handleChange5}/>
+                            <input type="text" placeholder='Enter Price' name='amount5' value={amount5}
+                                   onChange={handleChange}/>
                         </div>
                         <div>
                             <label>Coins</label>
-                            <input type="text" readOnly placeholder='No of Coins' value={coin5}/>
+                            <input type="text" readOnly placeholder='No of Coins' name='coin5' value={coin5}/>
                         </div>
                     </div>
                     <div>
