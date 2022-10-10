@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
+import { CSVLink } from "react-csv";
 
 function App() {
-
+    const [showText, setShowText] = useState(false);
     let [rate1, setRate1] = useState();
     let [amount1, setAmount1] = useState();
     let [coin1, setCoin1] = useState();
@@ -81,8 +82,6 @@ function App() {
                 // code block
             }
         }
-
-
     }
 
     const calcSum = (event) => {
@@ -108,8 +107,35 @@ function App() {
         setEarn(parseFloat(TotalEarn).toFixed(2))
         setProfit(parseFloat(profit).toFixed(2))
         setCoins(parseFloat(coins).toFixed(2))
+        setShowText(true)
 
     }
+
+    const headers = [
+        { label: "Rate", key: "rate" },
+        { label: "Amount", key: "amount" },
+        { label: "Coins", key: "coins" },
+        { label: "Selling Rate", key: "selling_rate" },
+        { label: "Total Spend", key: "total_spend" },
+        { label: "Total Earning", key: "total_earning" },
+        { label: "Profit", key: "profit" },
+        { label: "Total Coins", key: "total_coins" },
+    ];
+
+    const data = [
+        { rate: rate1, amount: amount1, coins: coin1 ,selling_rate:sellingRate, total_spend:spend, total_earning: earn, profit: profit, total_coins: coins},
+        { rate: rate2, amount: amount2, coins: coin2 },
+        { rate: rate3, amount: amount3, coins: coin3 },
+        { rate: rate4, amount: amount4, coins: coin4 },
+        { rate: rate5, amount: amount5, coins: coin5 },
+
+    ];
+
+    const csvReport = {
+        data: data,
+        headers: headers,
+        filename: 'Coin_Report.csv'
+    };
 
     return (
         <div className='app'>
@@ -198,19 +224,20 @@ function App() {
                     </div>
                     <div>
                         <label>Selling Rate</label>
-                        <input type="text" placeholder='Enter Selling Rate' value={sellingRate}
+                        <input type="text" placeholder='Enter Selling Rate' name='sellingRate' value={sellingRate}
                                onChange={(e) => setSellingRate(e.target.value)}/>
                     </div>
                     <div>
                         <button className='btn' type='submit'>Submit</button>
                     </div>
                 </form>
-                <div className='center'>
+                {showText && <div className='center'>
                     <h3>Total Coins are: {coins}</h3>
                     <h3>Total Expense is: {spend}</h3>
                     <h3>Total Earning is: {earn}</h3>
                     <h3>Your Profit is: {profit}</h3>
-                </div>
+                    <a className='btn download'><CSVLink {...csvReport}>Export to CSV</CSVLink></a>
+                </div>}
             </div>
         </div>
     );

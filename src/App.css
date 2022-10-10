@@ -85,3 +85,10 @@ p {
 .rateCol{
   margin-right: 10px;
 }
+
+.download{
+  color: #e3efeb !important;
+  text-align: center;
+  background-color: #e3efeb;
+  text-underline: none;
+}
